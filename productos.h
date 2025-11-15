@@ -1,7 +1,7 @@
 #ifndef PRODUCTOS_H
-#define Productos_H
+#define PRODUCTOS_H
 
-typedef struct{
+typedef struct {
     char codigo[20];
     char nombre[50];
     int cantidad;
@@ -9,20 +9,21 @@ typedef struct{
     float precio;
 } Producto;
 
-typedef struct{
-    int numFactura;
+typedef struct {
+    int factura;
     char codigo[20];
     char nombre[50];
-    int cantidadVendiad;
-    float csoto;
+    int cantidadVendida;
+    float costo;
     float precio;
-    char fecha[15];
 } Venta;
 
-Producto *cargarProductos(int *n);
-void guardarProductos(Producto *productos, int n);
+//Metodos que se usan para los productos
+
+Producto* cargarProductos(int *n);
+void guardarProductos(Producto *p, int n);
 int buscarProducto(Producto *p, int n, char *codigo);
 int obtenerUltimaFactura();
-void registrarVenta(Venta * ventas, int nVentas);
+void registrarVentas(Venta *v, int n);
 
 #endif
